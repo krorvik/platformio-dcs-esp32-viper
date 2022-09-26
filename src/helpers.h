@@ -8,6 +8,7 @@ char alt_digits[6] = { '0', '0', '0', '0', '0', '\0'};
 char baro_digits[5] = {'2', '9', '9', '2', '\0'};
 char mach_chars[5] = {'0', '.', '0', '0', '\0'};
 char totalizer_digits[6] = { '0', '0', '0', '0', '0', '\0' };
+char fuelflow_chars[5] = {'0', '0', '0', '0', '0'};
 
 float calculate_mach(unsigned int value) {  
   if (value >= on_limit) {
