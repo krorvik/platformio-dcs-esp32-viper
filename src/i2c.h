@@ -7,7 +7,7 @@
 #define I2C_SCK    22
 #define DISPLAY_WIDTH 128 // OLED display width, in pixels
 #define DISPLAY_HEIGHT 32 // OLED display height, in pixels
-#define DISPLAY_ADDRESS 0x3C  // 128x32
+#define DISPLAY_ADDRESS 0x3C
 #define MUX_ADDRESS 0x70
 #define OLED_RESET     -1
 
@@ -43,7 +43,7 @@ void display_init() {
   display.display();
 }
 
-void display_init(unsigned frombus, unsigned tobus) {
+void display_init_mux(unsigned frombus, unsigned tobus) {
   I2Cone.begin(I2C_SDA, I2C_SCK, (uint32_t) I2C_HZ);
   for (int i = frombus; i <= tobus; i++) {
     switchBus(i);

@@ -45,7 +45,7 @@ class ViperStepper {
     void moveToContinuous(long position);
     void move(long steps);
     void reset();
-    unsigned int getResolution();
+    void wait();
     unsigned int adjustFactor;
 
   private:
@@ -84,8 +84,13 @@ ViperStepper::ViperStepper (
     steppercount++;
 }
 
+void ViperStepper::wait() {
+  while (this->stepper->isRunning()) {};
+}
+
 void ViperStepper::reset() {
   this->stepper->stopMove();
+  this->wait();
   this->stepper->setCurrentPosition(0);
 }
 
@@ -108,30 +113,27 @@ void ViperStepper::moveToContinuous(long position) {
   this->stepper->move(direction * map(diff, 0, 65535, 0, this->resolution * MICROSTEPS));
 }
 
-unsigned int ViperStepper::getResolution() {
-    return resolution;
-}
-
 void ViperStepper::move(long steps) {
-    stepper->move(steps);
+    this->stepper->move(steps);
 }
 
 /*
  * END ViperStepper class
  */
 
-void sweep(int stepperid) {
-  all_steppers[stepperid]->move(all_steppers[stepperid]->getResolution() * MICROSTEPS);
-}
-
-void sweep_all() {
-  for (unsigned int i; i< steppercount; i++) {
-      all_steppers[i]->move(all_steppers[i]->getResolution() * MICROSTEPS);
-  }
+void test_sweep(unsigned stepperid, long max_pos) {
+  ViperStepper *stp = all_steppers[stepperid];
+  stp->moveToBounded(max_pos);
+  stp->wait();
+  delay(1000);
+  stp->moveToBounded(max_pos / 2);
+  stp->wait();
+  delay(1000);
+  stp->moveToBounded(0);
 }
 
 bool initAllowed() {
-    return init_allowed;
+  return init_allowed;
 }
 
 void disable_init() {
@@ -188,7 +190,7 @@ void stepper_init() {
   select_button.setLongClickTime(1000);
   select_button.setLongClickHandler(selector_longclickhandler);
 
-  lastpos = pulseIn(PWM_PIN, HIGH) / 8;
+  lastpos = pulseIn(PWM_PIN, HIGH, PULSEIN_TIMEOUT) / 8;
 }
 
 long getRotations() {

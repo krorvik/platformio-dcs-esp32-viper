@@ -38,7 +38,7 @@ char* fuel_blanked() {
   return tmp_digits;
 }
 
-int translateDigit(unsigned int value) {
+int translate_digit(unsigned int value) {
   if (value < 6553) { return 0;}
   if (value < 13107) { return 1;}
   if (value < 19660) { return 2;}
@@ -49,6 +49,12 @@ int translateDigit(unsigned int value) {
   if (value < 52428) { return 7;}
   if (value < 58981) { return 8;}
   return 9;
+}
+
+int translate_indexer(unsigned value, unsigned center_value) {
+  if (value <= 32768) { return map(value, 0, 32768, 0, center_value); }
+  return map(value, 32768, 65535, center_value, 65535);
+
 }
 
 int32_t translate_ias(unsigned int value) {
