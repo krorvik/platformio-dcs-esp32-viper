@@ -1681,9 +1681,9 @@
 // Item: AB_RESET_SW  
 // Description: switch position -- 0 = Down, 1 = Mid ,  2 = UP
 //
-#define AB_RESET_SW_3POS2_ADDRESS 0x4424
-#define AB_RESET_SW_3POS2_MASK 0x30
-#define AB_RESET_SW_3POS2_SHIFTBY 0x4
+#define AB_RESET_SW_3POS2_OC_ADDRESS 0x4424
+#define AB_RESET_SW_3POS2_OC_MASK 0x30
+#define AB_RESET_SW_3POS2_OC_SHIFTBY 0x4
 //
 // Category: Engine
 // Item: ENGINE_OIL_PRESSURE  
@@ -1721,9 +1721,9 @@
 // Item: JFS_SW  
 // Description: switch position -- 0 = Down, 1 = Mid ,  2 = UP
 //
-#define JFS_SW_3POS2_ADDRESS 0x4424
-#define JFS_SW_3POS2_MASK 0x3
-#define JFS_SW_3POS2_SHIFTBY 0x0
+#define JFS_SW_3POS2_OC_ADDRESS 0x4424
+#define JFS_SW_3POS2_OC_MASK 0x3
+#define JFS_SW_3POS2_OC_SHIFTBY 0x0
 //
 // Category: Engine
 // Item: ENGINE_FTIT  
@@ -2033,9 +2033,9 @@
 // Item: OXY_EMERG_LVR  
 // Description: switch position -- 0 = Down, 1 = Mid ,  2 = UP
 //
-#define OXY_EMERG_LVR_3POS2_ADDRESS 0x4424
-#define OXY_EMERG_LVR_3POS2_MASK 0xc00
-#define OXY_EMERG_LVR_3POS2_SHIFTBY 0xa
+#define OXY_EMERG_LVR_3POS2_OC_ADDRESS 0x4424
+#define OXY_EMERG_LVR_3POS2_OC_MASK 0xc00
+#define OXY_EMERG_LVR_3POS2_OC_SHIFTBY 0xa
 //
 // Category: Oxygen System
 // Item: OXY_SUPPLY_LVR  
@@ -2169,9 +2169,9 @@
 // Item: CANOPY_SW  
 // Description: switch position -- 0 = Down, 1 = Mid ,  2 = UP
 //
-#define CANOPY_SW_3POS2_ADDRESS 0x446a
-#define CANOPY_SW_3POS2_MASK 0x6000
-#define CANOPY_SW_3POS2_SHIFTBY 0xd
+#define CANOPY_SW_3POS2_OC_ADDRESS 0x446a
+#define CANOPY_SW_3POS2_OC_MASK 0x6000
+#define CANOPY_SW_3POS2_OC_SHIFTBY 0xd
 //
 // Category: Cockpit Mechanics
 // Item: SEAT_HEIGHT  
@@ -2233,9 +2233,9 @@
 // Item: SEAT_ADJ  
 // Description: switch position -- 0 = Down, 1 = Mid ,  2 = UP
 //
-#define SEAT_ADJ_3POS2_ADDRESS 0x446a
-#define SEAT_ADJ_3POS2_MASK 0x600
-#define SEAT_ADJ_3POS2_SHIFTBY 0x9
+#define SEAT_ADJ_3POS2_OC_ADDRESS 0x446a
+#define SEAT_ADJ_3POS2_OC_MASK 0x600
+#define SEAT_ADJ_3POS2_OC_SHIFTBY 0x9
 //
 // Category: Avionic Panel
 // Item: MMC_PWR_SW  
@@ -2337,9 +2337,9 @@
 // Item: MAL_IND_LTS_BRT_SW  
 // Description: switch position -- 0 = Down, 1 = Mid ,  2 = UP
 //
-#define MAL_IND_LTS_BRT_SW_3POS2_ADDRESS 0x4408
-#define MAL_IND_LTS_BRT_SW_3POS2_MASK 0x6000
-#define MAL_IND_LTS_BRT_SW_3POS2_SHIFTBY 0xd
+#define MAL_IND_LTS_BRT_SW_3POS2_OC_ADDRESS 0x4408
+#define MAL_IND_LTS_BRT_SW_3POS2_OC_MASK 0x6000
+#define MAL_IND_LTS_BRT_SW_3POS2_OC_SHIFTBY 0xd
 //
 // Category: External Lights
 // Item: AIR_REFUEL_LIGHT_KNB  
@@ -2489,9 +2489,9 @@
 // Item: AP_PITCH_SW  
 // Description: switch position -- 0 = Down, 1 = Mid ,  2 = UP
 //
-#define AP_PITCH_SW_3POS2_ADDRESS 0x4400
-#define AP_PITCH_SW_3POS2_MASK 0x300
-#define AP_PITCH_SW_3POS2_SHIFTBY 0x8
+#define AP_PITCH_SW_3POS2_OC_ADDRESS 0x4400
+#define AP_PITCH_SW_3POS2_OC_MASK 0x300
+#define AP_PITCH_SW_3POS2_OC_SHIFTBY 0x8
 //
 // Category: Control Interface
 // Item: MAN_TF_FLYUP_SW  
@@ -2633,9 +2633,9 @@
 // Item: ALT_MODE_LV  
 // Description: switch position -- 0 = Down, 1 = Mid ,  2 = UP
 //
-#define ALT_MODE_LV_3POS2_ADDRESS 0x446a
-#define ALT_MODE_LV_3POS2_MASK 0x3
-#define ALT_MODE_LV_3POS2_SHIFTBY 0x0
+#define ALT_MODE_LV_3POS2_OC_ADDRESS 0x446a
+#define ALT_MODE_LV_3POS2_OC_MASK 0x3
+#define ALT_MODE_LV_3POS2_OC_SHIFTBY 0x0
 //
 // Category: Altimeter
 // Item: ALT_1000_FT_CNT  
@@ -2681,17 +2681,17 @@
 // Item: FLCS_PWR_TEST_SW  
 // Description: switch position -- 0 = Down, 1 = Mid ,  2 = UP
 //
-#define FLCS_PWR_TEST_SW_3POS2_ADDRESS 0x441c
-#define FLCS_PWR_TEST_SW_3POS2_MASK 0x60
-#define FLCS_PWR_TEST_SW_3POS2_SHIFTBY 0x5
+#define FLCS_PWR_TEST_SW_3POS2_OC_ADDRESS 0x441c
+#define FLCS_PWR_TEST_SW_3POS2_OC_MASK 0x60
+#define FLCS_PWR_TEST_SW_3POS2_OC_SHIFTBY 0x5
 //
 // Category: Electric System
 // Item: PROBE_HEAT_SW  
 // Description: switch position -- 0 = Down, 1 = Mid ,  2 = UP
 //
-#define PROBE_HEAT_SW_3POS2_ADDRESS 0x441c
-#define PROBE_HEAT_SW_3POS2_MASK 0x18
-#define PROBE_HEAT_SW_3POS2_SHIFTBY 0x3
+#define PROBE_HEAT_SW_3POS2_OC_ADDRESS 0x441c
+#define PROBE_HEAT_SW_3POS2_OC_MASK 0x18
+#define PROBE_HEAT_SW_3POS2_OC_SHIFTBY 0x3
 //
 // Category: Vertical Velocity Indicator
 // Item: VVI  
@@ -3253,9 +3253,9 @@
 // Item: ICP_DATA_UP_DN_SW  
 // Description: switch position -- 0 = Down, 1 = Mid ,  2 = UP
 //
-#define ICP_DATA_UP_DN_SW_3POS2_ADDRESS 0x4434
-#define ICP_DATA_UP_DN_SW_3POS2_MASK 0xc
-#define ICP_DATA_UP_DN_SW_3POS2_SHIFTBY 0x2
+#define ICP_DATA_UP_DN_SW_3POS2_OC_ADDRESS 0x4434
+#define ICP_DATA_UP_DN_SW_3POS2_OC_MASK 0xc
+#define ICP_DATA_UP_DN_SW_3POS2_OC_SHIFTBY 0x2
 //
 // Category: UFC
 // Item: ICP_BTN_2  
@@ -3325,9 +3325,9 @@
 // Item: ICP_DRIFT_SW  
 // Description: switch position -- 0 = Down, 1 = Mid ,  2 = UP
 //
-#define ICP_DRIFT_SW_3POS2_ADDRESS 0x442a
-#define ICP_DRIFT_SW_3POS2_MASK 0x6000
-#define ICP_DRIFT_SW_3POS2_SHIFTBY 0xd
+#define ICP_DRIFT_SW_3POS2_OC_ADDRESS 0x442a
+#define ICP_DRIFT_SW_3POS2_OC_MASK 0x6000
+#define ICP_DRIFT_SW_3POS2_OC_SHIFTBY 0xd
 //
 // Category: UFC
 // Item: RF_SW  
@@ -3365,9 +3365,9 @@
 // Item: ICP_FLIR_SW  
 // Description: switch position -- 0 = Down, 1 = Mid ,  2 = UP
 //
-#define ICP_FLIR_SW_3POS2_ADDRESS 0x442a
-#define ICP_FLIR_SW_3POS2_MASK 0x1800
-#define ICP_FLIR_SW_3POS2_SHIFTBY 0xb
+#define ICP_FLIR_SW_3POS2_OC_ADDRESS 0x442a
+#define ICP_FLIR_SW_3POS2_OC_MASK 0x1800
+#define ICP_FLIR_SW_3POS2_OC_SHIFTBY 0xb
 //
 // Category: UFC
 // Item: ICP_RASTER_BRT_KNB  
@@ -3381,9 +3381,9 @@
 // Item: ICP_DATA_RTN_SEQ_SW  
 // Description: switch position -- 0 = Down, 1 = Mid ,  2 = UP
 //
-#define ICP_DATA_RTN_SEQ_SW_3POS2_ADDRESS 0x4434
-#define ICP_DATA_RTN_SEQ_SW_3POS2_MASK 0x3
-#define ICP_DATA_RTN_SEQ_SW_3POS2_SHIFTBY 0x0
+#define ICP_DATA_RTN_SEQ_SW_3POS2_OC_ADDRESS 0x4434
+#define ICP_DATA_RTN_SEQ_SW_3POS2_OC_MASK 0x3
+#define ICP_DATA_RTN_SEQ_SW_3POS2_OC_SHIFTBY 0x0
 //
 // Category: UFC
 // Item: ICP_IFF_BTN  
@@ -3413,9 +3413,9 @@
 // Item: ICP_DED_SW  
 // Description: switch position -- 0 = Down, 1 = Mid ,  2 = UP
 //
-#define ICP_DED_SW_3POS2_ADDRESS 0x442a
-#define ICP_DED_SW_3POS2_MASK 0x600
-#define ICP_DED_SW_3POS2_SHIFTBY 0x9
+#define ICP_DED_SW_3POS2_OC_ADDRESS 0x442a
+#define ICP_DED_SW_3POS2_OC_MASK 0x600
+#define ICP_DED_SW_3POS2_OC_SHIFTBY 0x9
 //
 // Category: UFC
 // Item: ICP_COM2_BTN  
@@ -3565,7 +3565,7 @@
 // Item: FUEL_QTY_SEL_T_KNB  
 // Description: possible values: "1" "0" 
 //
-//#define FUEL_QTY_SEL_T_KNB_SELECTOR_ADDRESS 0x4420
+#define FUEL_QTY_SEL_T_KNB_SELECTOR_ADDRESS 0x4420
 //
 // Category: Fuel System
 // Item: FUELTOTALIZER_100  

@@ -9,7 +9,8 @@ type_trans = {
     "selector": "SELECTOR",
     "display": "DISPLAY",
     "metadata": "METADATA",
-    "3Pos_2Command_Switch_OpenClose": "3POS2"
+    "3Pos_2Command_Switch_OpenClose": "3POS2_OC",
+    "3Pos_2Command_Switch": "3POS2"
 }
 
 
