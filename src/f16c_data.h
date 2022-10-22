@@ -1409,9 +1409,9 @@
 // Item: IFF_M1_SEL_2  
 // Description: switch position -- 0 = Down, 1 = Mid ,  2 = UP
 //
-#define IFF_M1_SEL_2_3POS2_ADDRESS 0x4450
-#define IFF_M1_SEL_2_3POS2_MASK 0x6000
-#define IFF_M1_SEL_2_3POS2_SHIFTBY 0xd
+#define IFF_M1_SEL_2_3POS2_OC_ADDRESS 0x4450
+#define IFF_M1_SEL_2_3POS2_OC_MASK 0x6000
+#define IFF_M1_SEL_2_3POS2_OC_SHIFTBY 0xd
 //
 // Category: IFF
 // Item: IFF_CODE_DRUM_DIGIT_1  
@@ -1441,17 +1441,17 @@
 // Item: IFF_M3_SEL_1  
 // Description: switch position -- 0 = Down, 1 = Mid ,  2 = UP
 //
-#define IFF_M3_SEL_1_3POS2_ADDRESS 0x4452
-#define IFF_M3_SEL_1_3POS2_MASK 0x3
-#define IFF_M3_SEL_1_3POS2_SHIFTBY 0x0
+#define IFF_M3_SEL_1_3POS2_OC_ADDRESS 0x4452
+#define IFF_M3_SEL_1_3POS2_OC_MASK 0x3
+#define IFF_M3_SEL_1_3POS2_OC_SHIFTBY 0x0
 //
 // Category: IFF
 // Item: IFF_M3_SEL_2  
 // Description: switch position -- 0 = Down, 1 = Mid ,  2 = UP
 //
-#define IFF_M3_SEL_2_3POS2_ADDRESS 0x4452
-#define IFF_M3_SEL_2_3POS2_MASK 0xc
-#define IFF_M3_SEL_2_3POS2_SHIFTBY 0x2
+#define IFF_M3_SEL_2_3POS2_OC_ADDRESS 0x4452
+#define IFF_M3_SEL_2_3POS2_OC_MASK 0xc
+#define IFF_M3_SEL_2_3POS2_OC_SHIFTBY 0x2
 //
 // Category: IFF
 // Item: IFF_M4_CODE_SW  
@@ -1465,9 +1465,9 @@
 // Item: IFF_M1_SEL_1  
 // Description: switch position -- 0 = Down, 1 = Mid ,  2 = UP
 //
-#define IFF_M1_SEL_1_3POS2_ADDRESS 0x4450
-#define IFF_M1_SEL_1_3POS2_MASK 0x1800
-#define IFF_M1_SEL_1_3POS2_SHIFTBY 0xb
+#define IFF_M1_SEL_1_3POS2_OC_ADDRESS 0x4450
+#define IFF_M1_SEL_1_3POS2_OC_MASK 0x1800
+#define IFF_M1_SEL_1_3POS2_OC_SHIFTBY 0xb
 //
 // Category: IFF
 // Item: IFF_ENABLE_SW  
@@ -3883,9 +3883,9 @@
 // Item: ANTI_SKID_SW  
 // Description: switch position -- 0 = Down, 1 = Mid ,  2 = UP
 //
-#define ANTI_SKID_SW_3POS2_ADDRESS 0x441e
-#define ANTI_SKID_SW_3POS2_MASK 0x180
-#define ANTI_SKID_SW_3POS2_SHIFTBY 0x7
+#define ANTI_SKID_SW_3POS2_OC_ADDRESS 0x441e
+#define ANTI_SKID_SW_3POS2_OC_MASK 0x180
+#define ANTI_SKID_SW_3POS2_OC_SHIFTBY 0x7
 //
 // Category: Gear System
 // Item: GEAR_HANDLE  
