@@ -11,6 +11,7 @@
 #define PWM_MAX 253 //Slight deadzone
 #define MICROSTEPS 8
 #define PULSEIN_TIMEOUT 5000
+#define ZEROMARGIN 6000 
 
 Button2 select_button(SWITCH_PIN);
 FastAccelStepperEngine stepper_engine = FastAccelStepperEngine();
@@ -24,7 +25,6 @@ unsigned int click_counter = 0;
 int selected_stepper = 0;
 unsigned int steppercount = 0;
 bool init_allowed = true;
-
 
 /*
  * ViperStepper class
@@ -44,6 +44,7 @@ class ViperStepper {
     void moveToBounded(long position);
     void moveToContinuous(long position);
     void move(long steps);
+    void moveTo(long steps);
     void reset();
     void wait();
     unsigned int adjustFactor;
@@ -54,7 +55,7 @@ class ViperStepper {
     long min_value;
     long max_value;
     unsigned int acceleration;
-    unsigned int rotations;    
+    int rotations;    
     long last_position;
 };
 
@@ -102,15 +103,23 @@ void ViperStepper::moveToBounded(long position) {
 
 // No limits, and can rotate many times the same direction (typ: bank indication, compass)
 // int signOfX = (x > 0) - (x < 0);
-void ViperStepper::moveToContinuous(long position) {
-  int diff = position - this->last_position;
-  int direction = (diff > 0) - (diff < 0);
-  if (abs(diff) >= 32768) {
-    diff = 65535 - abs(diff);
-    direction = direction * -1;
-  }
-  last_position = position;
-  this->stepper->move(direction * map(diff, 0, 65535, 0, this->resolution * MICROSTEPS));
+void ViperStepper::moveToContinuous(long position) {  
+
+  // If moving down past zero
+  if(this->last_position < ZEROMARGIN and position > (65535 - ZEROMARGIN))  {
+    this->rotations += -1;
+  } 
+  // Or moving up past zero
+  else if (this->last_position > (65535 - ZEROMARGIN) and position < ZEROMARGIN ) {
+    this->rotations += 1;
+  } 
+
+  this->last_position = position;  
+  this->stepper->moveTo(this->rotations * this->resolution * MICROSTEPS + map(position, 0, 65535, this->min_value * MICROSTEPS, this->max_value * MICROSTEPS));
+}
+
+void ViperStepper::moveTo(long steps) {
+    this->stepper->moveTo(steps);
 }
 
 void ViperStepper::move(long steps) {

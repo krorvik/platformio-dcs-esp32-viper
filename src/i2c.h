@@ -1,6 +1,9 @@
 #ifndef VIPER1306_H
 #define VIPER1306_H
 #include <Adafruit_SSD1306.h>
+#include <U8g2lib.h>
+#include <Wire.h>
+#include <i2c.h>
 
 #define I2C_HZ 400000
 #define I2C_SDA    23
@@ -38,7 +41,7 @@ void write_display_mux(unsigned bus, String data, int x = 0, int y = 0, int text
 
 void display_init() {
   I2Cone.begin(I2C_SDA, I2C_SCK, (uint32_t) I2C_HZ);
-  display.begin(SSD1306_SWITCHCAPVCC, DISPLAY_ADDRESS);
+  display.begin();
   display.clearDisplay();
   display.display();
 }
@@ -47,7 +50,7 @@ void display_init_mux(unsigned frombus, unsigned tobus) {
   I2Cone.begin(I2C_SDA, I2C_SCK, (uint32_t) I2C_HZ);
   for (int i = frombus; i <= tobus; i++) {
     switchBus(i);
-    display.begin(SSD1306_SWITCHCAPVCC, DISPLAY_ADDRESS);
+    display.begin();
     display.clearDisplay();
     display.display();
   }
