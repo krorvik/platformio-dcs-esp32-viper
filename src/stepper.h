@@ -24,7 +24,7 @@ long lastpos = 0;
 unsigned int click_counter = 0;
 int selected_stepper = 0;
 unsigned int steppercount = 0;
-bool init_allowed = true;
+bool init_allowed = false;
 
 /*
  * ViperStepper class
@@ -47,6 +47,7 @@ class ViperStepper {
     void moveTo(long steps);
     void reset();
     void wait();
+    void sweep();
     unsigned int adjustFactor;
 
   private:
@@ -87,6 +88,12 @@ ViperStepper::ViperStepper (
 
 void ViperStepper::wait() {
   while (this->stepper->isRunning()) {};
+}
+
+void ViperStepper::sweep() {
+  this->moveToBounded(65535);
+  delay(3000);
+  this->moveToBounded(0);
 }
 
 void ViperStepper::reset() {
@@ -130,17 +137,6 @@ void ViperStepper::move(long steps) {
  * END ViperStepper class
  */
 
-void test_sweep(unsigned stepperid, long max_pos) {
-  ViperStepper *stp = all_steppers[stepperid];
-  stp->moveToBounded(max_pos);
-  stp->wait();
-  delay(1000);
-  stp->moveToBounded(max_pos / 2);
-  stp->wait();
-  delay(1000);
-  stp->moveToBounded(0);
-}
-
 bool initAllowed() {
   return init_allowed;
 }
@@ -158,6 +154,7 @@ void enable_init() {
 
 void selector_clickhandler(Button2 &button) {
   if (init_allowed) {
+    all_steppers[click_counter]->sweep();
     click_counter += 1;
     selected_stepper = click_counter % (steppercount + 1);
   }
